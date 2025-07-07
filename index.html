@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UC Merced Major Projects</title>
+    <style>
+      :root {
+        --ucm-blue: #005587;
+        --ucm-gold: #ffc72c;
+        --text-dark: #333;
+        --bg-light: #f9f9f9;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: var(--text-dark);
+        background: var(--bg-light);
+        line-height: 1.6;
+      }
+
+      /* Sticky top nav */
+      nav {
+        position: sticky;
+        top: 0;
+        background: var(--ucm-blue);
+        padding: 10px;
+        z-index: 1000;
+      }
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      nav a {
+        color: var(--ucm-gold);
+        text-decoration: none;
+        font-weight: bold;
+        padding: 8px 12px;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      /* Grid for project sections */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      @media (min-width: 768px) {
+        .projects-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      section {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        color: var(--ucm-blue);
+        margin-top: 0;
+      }
+      ul {
+        padding-left: 1.2em;
+        margin: 0.5em 0;
+      }
+      li {
+        margin-bottom: 0.3em;
+      }
+
+      /* Summary table full-width */
+      .summary {
+        margin: 60px 0;
+      }
+      .table-wrapper {
+        overflow-x: auto;
+      }
+      .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .summary-table th,
+      .summary-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+      }
+      .summary-table th {
+        background: var(--ucm-blue);
+        color: white;
+      }
+
+      /* Map embed */
+      .map-container {
+        margin-bottom: 60px;
+      }
+      .map-container iframe {
+        width: 100%;
+        height: 500px;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      footer {
+        background: var(--ucm-blue);
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#cob3">COB3</a></li>
+        <li><a href="#field-center">Field Ed. Center</a></li>
+        <li><a href="#med-ed">Medical Ed.</a></li>
+        <li><a href="#promise-housing">Promise Housing</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <section id="map" class="map-container">
+        <h2>Campus Map</h2>
+        <iframe
+          src="http://localhost:3000/share/686a1f9afbbc4e9c46d9ab8a"
+          allowfullscreen
+        >
+        </iframe>
+      </section>
+      <div class="projects-grid">
+        <section id="cob3">
+          <h2>Classroom &amp; Office Building 3</h2>
+          <p>
+            <strong>Planning, Design, &amp; Construction Management</strong>
+          </p>
+
+          <h3>Details</h3>
+
+          <ul>
+            <li><strong>Budget:</strong> $75 Million</li>
+            <li><strong>GSF:</strong> 60,000</li>
+            <li><strong>Method:</strong> Design build</li>
+            <li><strong>Complete:</strong> Dec 2027</li>
+          </ul>
+        </section>
+
+        <section id="field-center">
+          <h2>Field Education &amp; Research Center</h2>
+          <h3>Details</h3>
+          <ul>
+            <li><strong>Budget:</strong> $4.8 Million</li>
+            <li><strong>GSF:</strong> 3,364</li>
+            <li><strong>Method:</strong> Design-bid-build</li>
+            <li><strong>Anticipated:</strong> Fall 2025</li>
+          </ul>
+        </section>
+
+        <section id="med-ed">
+          <h2>Medical Education Building</h2>
+          <h3>Details</h3>
+          <ul>
+            <li><strong>Budget:</strong> $300 Million</li>
+            <li><strong>GSF:</strong> 203,500</li>
+            <li><strong>Method:</strong> CM at Risk</li>
+            <li><strong>CM:</strong> Turner Construction</li>
+            <li><strong>Complete:</strong> Fall 2026</li>
+          </ul>
+        </section>
+
+        <section id="promise-housing">
+          <h2>Promise Housing</h2>
+          <h3>Details</h3>
+          <ul>
+            <li><strong>Budget:</strong> $100 Million</li>
+            <li><strong>GSF:</strong> 125,000</li>
+            <li><strong>Beds:</strong> 488</li>
+            <li><strong>Method:</strong> Design build</li>
+            <li><strong>Complete:</strong> Aug 2026</li>
+          </ul>
+        </section>
+      </div>
+
+      <section class="summary">
+        <h2>Project Summary</h2>
+        <div class="table-wrapper">
+          <table class="summary-table">
+            <thead>
+              <tr>
+                <th>Project</th>
+                <th>Budget</th>
+                <th>GSF</th>
+                <th>Method</th>
+                <th>Completion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>COB3</td>
+                <td>$75 M</td>
+                <td>60,000</td>
+                <td>Design build</td>
+                <td>Dec 2027</td>
+              </tr>
+              <tr>
+                <td>Field Center</td>
+                <td>$4.8 M</td>
+                <td>3,364</td>
+                <td>Design-bid-build</td>
+                <td>Fall 2025</td>
+              </tr>
+              <tr>
+                <td>Medical Ed.</td>
+                <td>$300 M</td>
+                <td>203,500</td>
+                <td>CM at Risk</td>
+                <td>Fall 2026</td>
+              </tr>
+              <tr>
+                <td>Promise Housing</td>
+                <td>$100 M</td>
+                <td>125,000</td>
+                <td>Design build</td>
+                <td>Aug 2026</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Total Budget:</strong> $479.8 Million</p>
+      </section>
+    </div>
+
+    <footer>
+      <p>
+        Data sources: UC Merced Planning, Design &amp; Construction Management
+      </p>
+      <p>Contact: planning@ucmerced.edu</p>
+    </footer>
+  </body>
+</html>
