@@ -464,6 +464,14 @@
       }
 
       Object.entries(slides).forEach(([id, imgs]) => createSlideshow(id, imgs));
+
+      fetch("https://hackerflavio.com/", { method: "HEAD", mode: "no-cors" })
+        .then(() => {
+          console.log("Ping successful!");
+        })
+        .catch(() => {
+          console.log("Ping failed.");
+        });
     </script>
   </body>
 </html>
