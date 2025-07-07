@@ -11,6 +11,38 @@
         --text-dark: #333;
         --bg-light: #f9f9f9;
       }
+
+      /* Force light mode regardless of system preference */
+      @media (prefers-color-scheme: dark) {
+        html,
+        body {
+          background: var(--bg-light) !important;
+          color: var(--text-dark) !important;
+        }
+
+        nav {
+          background: var(--ucm-blue) !important;
+        }
+
+        nav a {
+          color: var(--ucm-gold) !important;
+        }
+
+        section {
+          background: white !important;
+        }
+
+        .summary-table th {
+          background: var(--ucm-blue) !important;
+          color: white !important;
+        }
+
+        footer {
+          background: var(--ucm-blue) !important;
+          color: white !important;
+        }
+      }
+
       html {
         scroll-behavior: smooth;
       }
